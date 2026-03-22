@@ -53,8 +53,8 @@ Lege sofort alle 10 Kapitel als Markdown-Dateien in `content/` an — zunächst 
 ### Schritt 3c — Weitere Quellen recherchieren (bis 100–150 gesamt)
 Recherchiere weitere Quellen bis das Ziel von mindestens 80, idealerweise 100–150 Quellen erreicht ist. Quellen laufend in `sources.json` nachtragen.
 
-### Schritt 4 — Kapitel vollständig ausschreiben
-Schreibe alle 10 Kapitel vollständig aus.
+### Schritt 4 — Kapitel vollständig ausschreiben (mit Build nach jedem Kapitel)
+Schreibe die 10 Kapitel nacheinander. **Nach jedem fertiggestellten Kapitel sofort `python3 build.py` ausführen** — so wächst der Artikel sichtbar im Browser mit, Kapitel für Kapitel.
 
 Pro Kapitel:
 - Länge: 800–1.500 Wörter Fließtext (Einleitung und Ausblick kürzer, Hauptkapitel länger)
