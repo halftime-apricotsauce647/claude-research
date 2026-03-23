@@ -73,10 +73,13 @@ Pro Kapitel:
 - Am Ende jedes Kapitels: `## Literatur (Kapitelname)` mit vollständigen APA-7-Referenzen der in diesem Kapitel zitierten Quellen
 - Jede im Text zitierte Quelle **muss** in `sources.json` vorhanden sein — sonst wird sie nicht als klickbarer Link erkannt
 
+**KRITISCH — Überschriftenhierarchie:**
+Die erste Zeile jedes Kapitels **muss** eine H1-Überschrift sein (`# Kapitelname`). `build.py` sucht per Regex nach `<h1>`-Tags, um das Inhaltsverzeichnis zu generieren. Beginnt ein Kapitel mit H2 (`##`) statt H1, bleibt das Inhaltsverzeichnis leer.
+
 Abschnittsstruktur innerhalb der Kapitel:
-- `## Kapitelname` (H2) als Einstieg
-- `### Abschnitt` (H3) für Unterabschnitte
-- `#### Detail` (H4) sparsam verwenden
+- `# Kapitelname` (H1) als **erste Zeile** — erzeugt den TOC-Eintrag
+- `## Abschnitt` (H2) für Unterabschnitte
+- `### Detail` (H3) sparsam verwenden
 
 ### Schritt 5 — Abstract und source_count ergänzen
 Schreibe einen Abstract (3–5 Sätze, auf Deutsch) und trage ihn in `meta.json` ein.
@@ -363,6 +366,7 @@ var IMG_STYLE = "architectural photography, blue tones, minimal, elegant, ultra 
 ## Qualitätskontrolle vor Abschluss
 
 - [ ] Alle 10 Kapitel vorhanden und inhaltlich vollständig?
+- [ ] Jedes Kapitel beginnt mit `# Kapitelname` (H1)? Inhaltsverzeichnis im Browser prüfen!
 - [ ] Kein `[S...]`-Muster im Fließtext? (grep -r "\[S" content/ darf nichts liefern)
 - [ ] Jede im Text zitierte Quelle in sources.json vorhanden?
 - [ ] `meta.json` vollständig (Titel, Abstract, Autoren, Datum, source_count)?
