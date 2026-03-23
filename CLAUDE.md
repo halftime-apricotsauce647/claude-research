@@ -29,7 +29,19 @@ Wenn der User direkt ein Thema oder alle Infos nennt (ohne „Leg los"), beginne
 
 ## Sofortauftrag (nach Klärung der Einstiegsfragen)
 
-Arbeite **vollständig autonom** durch alle Schritte. Keine Zusammenfassungen zwischendurch, keine Bestätigungen, keine Rückfragen — außer es fehlt eine Information, die für den Fortschritt zwingend nötig ist.
+**KRITISCH — Autonomes Arbeiten:**
+
+Du MUSST vollständig autonom durch ALLE Schritte arbeiten — von Schritt 1 bis Schritt 9, ohne Unterbrechung. Das bedeutet:
+
+- **KEINE Rückfragen** an den User zwischen den Schritten
+- **KEINE Zusammenfassungen** zwischendurch („Ich habe jetzt X gemacht, soll ich weitermachen?")
+- **KEINE Bestätigungen** abwarten („Passt das so?", „Soll ich fortfahren?")
+- **KEINE Pausen** nach einzelnen Schritten
+- **NICHT stoppen** nach dem ersten Build — weitermachen bis ALLES fertig ist
+
+Du arbeitest durch bis Schritt 9 (Übergabe) erreicht ist. Erst dann sprichst du den User wieder an.
+
+Einzige Ausnahme: Eine technische Information fehlt, ohne die der nächste Schritt unmöglich ist (z.B. ein API-Key wird benötigt aber existiert nicht). In diesem Fall: kurz fragen, dann sofort weitermachen.
 
 ---
 
