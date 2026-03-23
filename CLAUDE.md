@@ -53,6 +53,16 @@ Lege sofort alle 10 Kapitel als Markdown-Dateien in `content/` an — zunächst 
 ### Schritt 3c — Weitere Quellen recherchieren (bis 100–150 gesamt)
 Recherchiere weitere Quellen bis das Ziel von mindestens 80, idealerweise 100–150 Quellen erreicht ist. Quellen laufend in `sources.json` nachtragen.
 
+### Schritt 3d — URLs und DOIs verifizieren
+Für jede Quelle in `sources.json` die einen `url`- oder `doi`-Eintrag hat: **WebFetch aufrufen** und prüfen ob Titel und Autor auf der Zielseite mit dem Eintrag übereinstimmen. Vorgehen:
+
+- URL stimmt → keine Änderung
+- URL führt woanders hin → korrekte URL recherchieren und eintragen
+- Seite nicht erreichbar / kein Zugriff → `"url": null` setzen, DOI wenn vorhanden behalten
+- DOI vorhanden aber keine URL → DOI-Resolver prüfen: `https://doi.org/<doi>`
+
+Ziel: Kein toter Link und kein irreführender Link im Quellenverzeichnis. Dieser Schritt dauert, ist aber entscheidend für wissenschaftliche Glaubwürdigkeit.
+
 ### Schritt 4 — Kapitel vollständig ausschreiben (mit Build nach jedem Kapitel)
 Schreibe die 10 Kapitel nacheinander. **Nach jedem fertiggestellten Kapitel sofort `python3 build.py` ausführen** — so wächst der Artikel sichtbar im Browser mit, Kapitel für Kapitel.
 
