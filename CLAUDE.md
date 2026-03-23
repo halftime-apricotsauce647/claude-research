@@ -290,10 +290,12 @@ Jede Quelle als JSON-Objekt:
 - 2 = 2019–2022
 - 1 = vor 2019
 
-`relevance` (1–3):
-- 3 = Kernthema, direkt relevant
-- 2 = Verwandtes Thema, nützlich
-- 1 = Hintergrund, Kontext
+`relevance` (1–3) — **gemessen am Kernthema aus `meta.json` → `relevance_topic`:**
+- 3 = entspricht `relevance_3` aus meta.json (direkt zum Kernthema)
+- 2 = entspricht `relevance_2` aus meta.json (verwandtes Thema)
+- 1 = entspricht `relevance_1` aus meta.json (allgemeiner Hintergrund)
+
+Wenn die `relevance_*`-Felder in meta.json noch leer sind, befülle sie in Schritt 1 passend zum Thema. Diese Texte erscheinen im Quellenverzeichnis und steuern die korrekte Einordnung neuer Quellen.
 
 `score` = authority + recency + relevance (3–10)
 
