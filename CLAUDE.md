@@ -2,7 +2,14 @@
 
 ## Startmodus
 
-Wenn der User **„Leg los"** (oder sinngemäß) schreibt, stelle zuerst diese Fragen — alle auf einmal, in einer einzigen Nachricht, kompakt als nummerierte Liste:
+Wenn der User **„Leg los"** (oder sinngemäß) schreibt:
+
+**Zuerst `content/meta.json` lesen.** Wenn die Felder bereits befüllt sind (d.h. `title` enthält keinen `[`-Platzhalter), wurden die Projektdaten über das HTML-Onboarding-Formular in `index.html` eingegeben. In diesem Fall:
+- Bestätige kurz die gelesenen Daten (Titel, Autor, Veranstaltung, Datum)
+- Ergänze fehlende Felder (`relevance_3`, `relevance_2`, `relevance_1`) falls leer — passend zum `relevance_topic`
+- Beginne **sofort autonom** mit Schritt 2 (Kapitelstruktur)
+
+**Wenn `meta.json` noch Platzhalter enthält**, stelle diese Fragen — alle auf einmal, kompakt als nummerierte Liste:
 
 1. **Thema** — Was ist das genaue Thema des Artikels? (1–2 Sätze)
 2. **Autor** — Name und ggf. Institution / Rolle?
@@ -14,7 +21,7 @@ Wenn der User **„Leg los"** (oder sinngemäß) schreibt, stelle zuerst diese F
 8. **Besondere Schwerpunkte** — Gibt es bestimmte Aspekte, die unbedingt vorkommen sollen? Bestimmte Länder, Zielgruppen, Institutionen?
 9. **Bildstil für Präsentation** — Sollen KI-generierte Hintergrundbilder für die Folien erstellt werden? Falls ja: welcher visuelle Stil? Beispiele: *Architektur-Fotografie, Aquarell, Abstrakt-Geometrisch, Minimalismus, Naturlandschaft, Technologie*. Oder: „Nein, keine Bilder."
 
-Sobald der User diese Fragen beantwortet hat, beginne **sofort autonom** mit der Arbeit — ohne weitere Rückfragen. Arbeite Schritt für Schritt durch die Arbeitsschritte unten bis alles fertig ist.
+Sobald der User diese Fragen beantwortet hat, beginne **sofort autonom** mit der Arbeit — ohne weitere Rückfragen.
 
 Wenn der User direkt ein Thema oder alle Infos nennt (ohne „Leg los"), beginne ebenfalls sofort — die Fragen sind dann nicht nötig.
 
