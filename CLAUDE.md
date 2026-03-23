@@ -79,8 +79,13 @@ IDs beginnen bei **S001** und laufen fortlaufend.
 ### Schritt 3b — Kapitelgerüst anlegen und ersten Build ausführen
 Lege sofort alle 10 Kapitel als Markdown-Dateien in `content/` an — zunächst als **Gerüst** mit Überschriften, 2–3 Einstiegssätzen und 2–3 Zitaten aus den bereits vorhandenen Quellen. Dann `python3 build.py` ausführen, damit der User frühzeitig eine funktionierende Seite sieht.
 
-### Schritt 3c — Weitere Quellen recherchieren (bis 100–150 gesamt)
-Recherchiere weitere Quellen bis das Ziel von mindestens 80, idealerweise 100–150 Quellen erreicht ist. Quellen laufend in `sources.json` nachtragen.
+### Schritt 3c — Weitere Quellen recherchieren (bis Zielanzahl)
+Recherchiere weitere Quellen bis das Ziel aus `meta.json` → `target_sources` erreicht ist (Standard: 100).
+
+**KRITISCH — Jede gefundene Quelle MUSS eingetragen werden:**
+Wenn du eine relevante Quelle findest, trage sie **sofort** in `sources.json` ein — nicht erst sammeln und später eintragen. Nach jedem Recherche-Block (je ~10 Quellen): zähle die tatsächlichen Einträge in `sources.json` und vergleiche mit dem Ziel. Wenn die Zielanzahl noch nicht erreicht ist: weiter recherchieren.
+
+Arbeite in Blöcken von **10 Quellen**: recherchieren → eintragen → `python3 build.py` → nächster Block. So sieht der User den Fortschritt live im Browser.
 
 ### Schritt 3d — URLs und DOIs verifizieren
 Für jede Quelle in `sources.json` die einen `url`- oder `doi`-Eintrag hat: **WebFetch aufrufen** und prüfen ob Titel und Autor auf der Zielseite mit dem Eintrag übereinstimmen. Vorgehen:
@@ -91,6 +96,9 @@ Für jede Quelle in `sources.json` die einen `url`- oder `doi`-Eintrag hat: **We
 - DOI vorhanden aber keine URL → DOI-Resolver prüfen: `https://doi.org/<doi>`
 
 Ziel: Kein toter Link und kein irreführender Link im Quellenverzeichnis. Dieser Schritt dauert, ist aber entscheidend für wissenschaftliche Glaubwürdigkeit.
+
+### Schritt 3e — Quellenanzahl prüfen
+Zähle die Einträge in `sources.json` und vergleiche mit `target_sources` aus `meta.json`. Wenn die Zielanzahl noch nicht erreicht ist: zurück zu Schritt 3c und weitere Quellen recherchieren. Erst wenn das Ziel erreicht ist: weiter zu Schritt 4.
 
 ### Schritt 4 — Kapitel vollständig ausschreiben (mit Build nach jedem Kapitel)
 Schreibe die 10 Kapitel nacheinander. **Nach jedem fertiggestellten Kapitel sofort `python3 build.py` ausführen** — so wächst der Artikel sichtbar im Browser mit, Kapitel für Kapitel.
