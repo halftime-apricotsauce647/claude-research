@@ -32,6 +32,14 @@ Arbeite **vollständig autonom** durch alle Schritte. Keine Zusammenfassungen zw
 Lies das Thema, den Autor und die Veranstaltung aus der ersten Nachricht des Users.
 Trage alle Informationen in `content/meta.json` ein. Abstract zunächst leer lassen (`""`), wird nach dem Schreiben der Kapitel ergänzt.
 
+**Relevanz-Kategorien:** Befülle auch die Felder `relevance_topic`, `relevance_3`, `relevance_2` und `relevance_1` passend zum Thema des Artikels. Diese Texte erscheinen im Quellenverzeichnis und steuern, wie die Relevanz-Dimension (1–3) beim Bewerten neuer Quellen interpretiert wird. Beispiel:
+```json
+"relevance_topic": "KI im Geometrieunterricht",
+"relevance_3": "Direkt: KI + Geometrie + Bildung",
+"relevance_2": "KI + Mathematik oder Geometrie + Didaktik",
+"relevance_1": "Allgemein KI-Bildung, Rahmendokumente"
+```
+
 ### Schritt 2 — Kapitelstruktur festlegen
 Lege basierend auf dem Thema sinnvolle Titel für Kapitel 3–8 fest. Kapitel 1, 2, 9 und 10 haben immer dieselbe Rolle (siehe Kapitelstruktur unten). Trage die Dateinamen in `meta.json` ein.
 
@@ -156,6 +164,17 @@ Falls der User in Frage 9 einen Bildstil gewählt hat:
 
 ### Schritt 8 — index.html anpassen
 Passe `index.html` an: Titel, Untertitel, Autor, Datum, Veranstaltung.
+
+### Schritt 9 — Übergabe an den User
+Wenn alle Schritte abgeschlossen sind (Artikel, Quellen, Präsentation, Build fehlerfrei), schreibe dem User eine freundliche Abschlussnachricht:
+
+> Die Literatur-Review und der Artikel sind abgeschlossen. Die Präsentation ist erstellt. Du kannst jetzt alles im Browser anschauen:
+>
+> - **standalone.html** — Fachartikel
+> - **quellen.html** — Quellenverzeichnis
+> - **presentation/index.html** — Folien (⚙ → ✦ für Bildgenerierung)
+>
+> Sag mir, was du ändern möchtest — einzelne Kapitel überarbeiten, mehr Quellen ergänzen, die Präsentation anpassen, oder etwas ganz anderes. Wie soll es weitergehen?
 
 ---
 

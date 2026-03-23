@@ -24,5 +24,9 @@
     "09_herausforderungen.md",
     "10_ausblick.md"
   ],
-  "source_count": 0
+  "source_count": 0,
+  "relevance_topic": "[KERNTHEMA, z.B. KI im Geometrieunterricht]",
+  "relevance_3": "[Direkt zum Kernthema, z.B. KI + Geometrie + Bildung]",
+  "relevance_2": "[Verwandtes Thema, z.B. KI + Mathematik oder Geometrie + Didaktik]",
+  "relevance_1": "[Allgemeiner Hintergrund, z.B. Allgemein KI-Bildung, Rahmendokumente]"
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Handbuch — KI im Geometrieunterricht</title>
+  <title>Handbuch — Forschungsartikel-Template</title>
   <link rel="stylesheet" href="assets/css/paper.css"/>
   <style>
     body { max-width: 820px; margin: 0 auto; padding: 2.5rem 2rem 6rem; }
@@ -40,6 +40,16 @@
     .score-bar { display: flex; gap: .3rem; align-items: center; margin: .3rem 0; font-family: sans-serif; font-size: .85rem; }
     .score-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
 
+    .install-step {
+      border: 1px solid #e0e0e0; border-left: 4px solid #e65100;
+      border-radius: 6px; padding: .9rem 1.1rem; margin: .75rem 0;
+      font-family: sans-serif; font-size: .88rem;
+    }
+    .install-step h4 { margin: 0 0 .25rem; font-size: .88rem; color: #e65100; }
+    .install-step p  { margin: 0; color: #444; line-height: 1.5; }
+    .install-step a  { color: #1a4e8a; }
+    .install-step .optional { color: #999; font-size: .8rem; font-style: italic; }
+
     code { font-family: "Courier New", monospace; font-size: .85em; background: #f0f0ec; padding: .1em .35em; border-radius: 3px; }
     pre  { background: #f4f4f0; border: 1px solid #ddd; padding: .9rem 1rem; overflow-x: auto; font-size: .82rem; border-radius: 4px; margin: .75rem 0; }
     table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-family: sans-serif; font-size: .86rem; }
@@ -53,56 +63,105 @@
 
 <header class="paper-header">
   <h1>Handbuch</h1>
-  <p class="subtitle">Funktionen, Konzept und technische Dokumentation</p>
-  <p class="authors">KI im Geometrieunterricht — Thomas Schroffenegger</p>
+  <p class="subtitle">Installation, Funktionen und technische Dokumentation</p>
+  <p class="authors">Forschungsartikel-Template — Claude Code (Anthropic)</p>
   <p class="meta"><a href="index.html">← Zurück zur Startseite</a></p>
 </header>
 
 <nav class="toc">
   <h2>Inhalt</h2>
-  <ol>
-    <li><a href="#konzept">Konzept und Entstehung</a></li>
-    <li><a href="#seiten">Seiten und Navigation</a></li>
-    <li><a href="#artikel">Fachartikel — Funktionen</a></li>
-    <li><a href="#latex-export">LaTeX-Export</a></li>
-    <li><a href="#quellen">Quellenverzeichnis</a></li>
-    <li><a href="#badges">Badges — Bedeutung und Farben</a></li>
-    <li><a href="#score">Qualitätsbewertung (Score)</a></li>
-    <li><a href="#abbildungen">Abbildungen einbinden</a></li>
-    <li><a href="#build">Build-System</a></li>
-    <li><a href="#quellen-hinzufuegen">Neue Quellen hinzufügen</a></li>
+  <ol style="list-style:none;padding-left:1.2rem">
+    <li><a href="#installation">1. Installation</a></li>
+    <li><a href="#konzept">2. Konzept und Arbeitsweise</a></li>
+    <li><a href="#seiten">3. Seiten und Navigation</a></li>
+    <li><a href="#artikel">4. Fachartikel — Funktionen</a></li>
+    <li><a href="#latex-export">5. LaTeX-Export</a></li>
+    <li><a href="#quellen">6. Quellenverzeichnis</a></li>
+    <li><a href="#badges">7. Badges — Bedeutung und Farben</a></li>
+    <li><a href="#score">8. Qualitätsbewertung (Score)</a></li>
+    <li><a href="#relevanz">9. Relevanz-Kategorien anpassen</a></li>
+    <li><a href="#abbildungen">10. Abbildungen einbinden</a></li>
+    <li><a href="#build">11. Build-System</a></li>
+    <li><a href="#quellen-hinzufuegen">12. Neue Quellen hinzufügen</a></li>
+    <li><a href="#praesentation">13. Präsentation</a></li>
   </ol>
 </nav>
 
 <!-- ══════════════════════════════════════════════════════════ -->
-<h2 id="konzept">1. Konzept und Entstehung</h2>
+<h2 id="installation">1. Installation</h2>
 
-<p>Dieses Projekt ist ein vollständig statisch gehosteter akademischer Artikel mit interaktivem Quellenmanagement. Es wurde in Zusammenarbeit zwischen Thomas Schroffenegger und dem KI-System Claude (Anthropic) erstellt.</p>
+<p>Dieses Template benötigt drei Komponenten. Die gesamte Einrichtung dauert etwa drei Minuten.</p>
+
+<div class="install-step">
+  <h4>Schritt 1 — Visual Studio Code</h4>
+  <p>Lade <a href="https://code.visualstudio.com/download" target="_blank" rel="noopener">Visual Studio Code</a> herunter und installiere es. Verfügbar für macOS, Windows und Linux.</p>
+</div>
+
+<div class="install-step">
+  <h4>Schritt 2 — Claude Code Extension</h4>
+  <p>Installiere die <a href="https://marketplace.visualstudio.com/items?itemName=anthropics.claude-code" target="_blank" rel="noopener">Claude Code Extension</a> aus dem VS Code Marketplace. Du brauchst einen <a href="https://console.anthropic.com/" target="_blank" rel="noopener">Anthropic-Account</a> (Claude) — die Anmeldung erfolgt direkt in VS Code.</p>
+</div>
+
+<div class="install-step">
+  <h4>Schritt 3 — Python 3</h4>
+  <p>Python wird für das Build-Script benötigt, das den Artikel zusammenbaut.</p>
+  <p>
+    <strong>macOS:</strong> <a href="https://www.python.org/downloads/macos/" target="_blank" rel="noopener">python.org/downloads/macos</a><br>
+    <strong>Windows:</strong> <a href="https://www.python.org/downloads/windows/" target="_blank" rel="noopener">python.org/downloads/windows</a> — bei der Installation <em>„Add to PATH"</em> aktivieren<br>
+    <strong>Linux:</strong> Meist vorinstalliert — prüfen mit <code>python3 --version</code>
+  </p>
+</div>
+
+<div class="install-step">
+  <h4>Schritt 4 — fal.ai API-Key <span class="optional">(optional)</span></h4>
+  <p>Nur nötig, wenn du KI-generierte Hintergrundbilder für die Präsentation möchtest. Erstelle einen kostenlosen Key auf <a href="https://fal.ai/dashboard/keys" target="_blank" rel="noopener">fal.ai/dashboard/keys</a> und trage ihn in <code>API Key.js</code> ein.</p>
+</div>
+
+<div class="install-step">
+  <h4>Schritt 5 — Los geht's</h4>
+  <p>Öffne den Template-Ordner in VS Code → Claude-Panel öffnen → eintippen: <strong>Leg los</strong></p>
+  <p>Claude stellt dir einige Fragen zu Thema, Veranstaltung und Umfang — danach läuft der gesamte Workflow automatisch: Quellenrecherche, Kapitel schreiben, Präsentation erstellen.</p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="konzept">2. Konzept und Arbeitsweise</h2>
+
+<p>Dieses Template erzeugt einen vollständig statisch gehosteten akademischen Artikel mit interaktivem Quellenmanagement. Claude Code dient als Schreib- und Rechercheassistent — du behältst die inhaltliche Kontrolle.</p>
 
 <p>Das Besondere am Konzept:</p>
 <ul>
   <li><strong>Keine Datenbank, kein CMS.</strong> Alle Inhalte liegen als Markdown-Dateien und eine JSON-Quellendatei vor. Ein Python-Script baut daraus eine vollständige HTML-Seite und einen LaTeX-Export.</li>
   <li><strong>Funktioniert lokal und online.</strong> Alle Seiten laufen direkt über <code>file://</code> ohne Webserver — und genauso auf jedem normalen Hosting.</li>
-  <li><strong>290 recherchierte Quellen</strong> mit Qualitätsbewertung, Badges und Verlinkungen zu Primärquellen.</li>
-  <li><strong>Zwei Export-Formate:</strong> HTML (mit interaktiven Funktionen) und LaTeX (für professionellen Druck).</li>
+  <li><strong>KI als Assistent, nicht als Autor.</strong> Claude recherchiert Quellen, schlägt Strukturen vor und liefert Entwürfe. Du entscheidest, was bleibt, und überarbeitest.</li>
+  <li><strong>Zwei Export-Formate:</strong> HTML (mit interaktiven Funktionen) und LaTeX (für professionellen Druck via Overleaf).</li>
 </ul>
 
+<p><strong>Typischer Workflow:</strong></p>
+<ol>
+  <li>Claude befüllt <code>meta.json</code> mit deinen Angaben</li>
+  <li>Recherchiert 5–10 Kernquellen → erster Build → du siehst sofort die Quellenübersicht</li>
+  <li>Legt Kapitelgerüste an → Build → du siehst die Seitenstruktur</li>
+  <li>Recherchiert weitere Quellen (bis 100–150) mit URL-Verifikation</li>
+  <li>Schreibt die Kapitel aus → Build nach jedem Kapitel</li>
+  <li>Erstellt die Präsentation mit KI-Folienbildern</li>
+</ol>
+
 <!-- ══════════════════════════════════════════════════════════ -->
-<h2 id="seiten">2. Seiten und Navigation</h2>
+<h2 id="seiten">3. Seiten und Navigation</h2>
 
 <table>
   <thead><tr><th>Seite</th><th>Zweck</th></tr></thead>
   <tbody>
-    <tr><td><a href="index.html">index.html</a></td><td>Startseite — Links zu allen Bereichen</td></tr>
+    <tr><td><a href="index.html">index.html</a></td><td>Startseite — Links zu allen Bereichen, Setup-Anleitung bei neuem Projekt</td></tr>
     <tr><td><a href="standalone.html">standalone.html</a></td><td>Vollständiger Fachartikel (wird durch Build erzeugt)</td></tr>
     <tr><td><a href="quellen.html">quellen.html</a></td><td>Interaktives Quellenverzeichnis mit Filter und Suche</td></tr>
-    <tr><td><a href="presentation/index.html">presentation/index.html</a></td><td>Präsentationsfolien für den Tag der Geometrie</td></tr>
+    <tr><td><a href="presentation/index.html">presentation/index.html</a></td><td>Präsentationsfolien</td></tr>
     <tr><td><strong>handbuch.html</strong></td><td>Diese Seite</td></tr>
   </tbody>
 </table>
 
 <!-- ══════════════════════════════════════════════════════════ -->
-<h2 id="artikel">3. Fachartikel — Funktionen</h2>
+<h2 id="artikel">4. Fachartikel — Funktionen</h2>
 
 <p>Der Fachartikel (<a href="standalone.html">standalone.html</a>) enthält mehrere interaktive Elemente:</p>
 
@@ -130,7 +189,7 @@
 
 <div class="function-card">
   <h4>Inhaltsverzeichnis</h4>
-  <p>Alle zehn Kapitel mit Sprunglinks. Beim Drucken bleibt das Inhaltsverzeichnis erhalten.</p>
+  <p>Alle zehn Kapitel mit Sprunglinks. <strong>Wichtig:</strong> Jedes Kapitel muss mit einer H1-Überschrift (<code># Kapitelname</code>) beginnen — sonst bleibt das Inhaltsverzeichnis leer.</p>
 </div>
 
 <div class="function-card">
@@ -139,12 +198,12 @@
 </div>
 
 <div class="function-card">
-  <h4>Anhang 7 — Vollständiges Quellenverzeichnis</h4>
-  <p>Alle 290 Quellen kompakt, zweispaltig, mit Quellen-ID und Markierung ob zitiert. Dient als Referenz und Druckbeilage.</p>
+  <h4>Vollständiges Quellenverzeichnis (Anhang)</h4>
+  <p>Alle Quellen kompakt, zweispaltig, mit Quellen-ID und Markierung ob zitiert. Dient als Referenz und Druckbeilage.</p>
 </div>
 
 <!-- ══════════════════════════════════════════════════════════ -->
-<h2 id="latex-export">4. LaTeX-Export</h2>
+<h2 id="latex-export">5. LaTeX-Export</h2>
 
 <p>Der <strong>↓ LaTeX</strong>-Button öffnet ein Overlay mit folgenden Optionen:</p>
 
@@ -162,17 +221,8 @@
 
 <p><strong>Download:</strong> Die <code>.tex</code>-Datei wird direkt im Browser generiert und heruntergeladen — kein Server nötig. Die Datei ist für <strong>pdflatex</strong> (Overleaf, TeX Live, MiKTeX) vorbereitet.</p>
 
-<p>Das LaTeX-Dokument enthält:</p>
-<ul>
-  <li>Vollständigen Fließtext aller 10 Kapitel</li>
-  <li>Weiterführende Literatur mit Badges</li>
-  <li>Anhang 7 mit allen 290 Quellen (zweispaltig)</li>
-  <li>Abbildungsverzeichnis (<code>\listoffigures</code>)</li>
-  <li>A5-Format, KOMA-Script (<code>scrartcl</code>), TeX Gyre Heros Condensed für Überschriften</li>
-</ul>
-
 <!-- ══════════════════════════════════════════════════════════ -->
-<h2 id="quellen">5. Quellenverzeichnis</h2>
+<h2 id="quellen">6. Quellenverzeichnis</h2>
 
 <p>Das <a href="quellen.html">interaktive Quellenverzeichnis</a> bietet:</p>
 <ul>
@@ -184,7 +234,7 @@
 </ul>
 
 <!-- ══════════════════════════════════════════════════════════ -->
-<h2 id="badges">6. Badges — Bedeutung und Farben</h2>
+<h2 id="badges">7. Badges — Bedeutung und Farben</h2>
 
 <p>Jede Quelle kann mehrere Badges tragen. Sie geben auf einen Blick Auskunft über Typ und Qualität:</p>
 
@@ -192,11 +242,11 @@
   <thead><tr><th>Badge</th><th>Bedeutung</th></tr></thead>
   <tbody>
     <tr><td><span class="badge badge-peer">🎓 Peer-reviewed</span></td><td>Begutachteter Fachartikel — höchste wissenschaftliche Glaubwürdigkeit</td></tr>
-    <tr><td><span class="badge badge-institution">🏛️ Institution</span></td><td>Offizieller Bericht einer Behörde, Organisation oder Hochschule (z. B. OECD, EU, BMBWF)</td></tr>
+    <tr><td><span class="badge badge-institution">🏛️ Institution</span></td><td>Offizieller Bericht einer Behörde, Organisation oder Hochschule</td></tr>
     <tr><td><span class="badge badge-book">📚 Verlag</span></td><td>Gedrucktes Buch oder Buchkapitel aus einem Wissenschaftsverlag</td></tr>
     <tr><td><span class="badge badge-preprint">🔬 Preprint</span></td><td>Noch nicht peer-reviewed — frühes Forschungsergebnis (arXiv, bioRxiv etc.)</td></tr>
     <tr><td><span class="badge badge-web">🌐 Web</span></td><td>Webquelle — Blogs, Nachrichtenartikel, Dokumentationen</td></tr>
-    <tr><td><span class="badge badge-austria">🇦🇹 Österreich</span></td><td>Österreichischer Bezug — besonders relevant für den Kontext TU Graz / PH Graz</td></tr>
+    <tr><td><span class="badge badge-austria">🇦🇹 Österreich</span></td><td>Österreichischer Bezug</td></tr>
     <tr><td><span class="badge badge-openaccess">🔓 Open Access</span></td><td>Frei zugänglich, keine Paywall</td></tr>
     <tr><td><span class="badge badge-paywall">🔒 Paywall</span></td><td>Nur mit Institutionszugang oder Bezahlung verfügbar</td></tr>
     <tr><td><span class="badge badge-math">🧮 Mathematik</span></td><td>Inhaltlich stark mathematisch — Formeln, Beweise, theoretische Grundlagen</td></tr>
@@ -205,7 +255,7 @@
 </table>
 
 <!-- ══════════════════════════════════════════════════════════ -->
-<h2 id="score">7. Qualitätsbewertung (Score)</h2>
+<h2 id="score">8. Qualitätsbewertung (Score)</h2>
 
 <p>Jede Quelle erhält einen Score von 3–10. Er setzt sich aus drei Kriterien zusammen:</p>
 
@@ -213,8 +263,8 @@
   <thead><tr><th>Kriterium</th><th>Skala</th><th>Bedeutung</th></tr></thead>
   <tbody>
     <tr><td><strong>Authority</strong></td><td>1–4</td><td>Herkunft und wissenschaftliche Reputation (Peer-Review-Journal = 4, Blog = 1)</td></tr>
-    <tr><td><strong>Recency</strong></td><td>1–3</td><td>Aktualität (2024–2026 = 3, vor 2020 = 1)</td></tr>
-    <tr><td><strong>Relevance</strong></td><td>1–3</td><td>Thematische Nähe zu KI + Geometrie + Bildung</td></tr>
+    <tr><td><strong>Recency</strong></td><td>1–3</td><td>Aktualität (2024–2026 = 3, vor 2022 = 1)</td></tr>
+    <tr><td><strong>Relevance</strong></td><td>1–3</td><td>Thematische Nähe zum Kernthema des Artikels (siehe nächstes Kapitel)</td></tr>
   </tbody>
 </table>
 
@@ -225,7 +275,31 @@
 <div class="score-bar"><span class="score-dot" style="background:#b71c1c"></span> <strong>3–4:</strong> Schwach — nur als Hintergrund</div>
 
 <!-- ══════════════════════════════════════════════════════════ -->
-<h2 id="abbildungen">8. Abbildungen einbinden</h2>
+<h2 id="relevanz">9. Relevanz-Kategorien anpassen</h2>
+
+<p>Die Relevanz-Dimension (1–3) muss zum <strong>Thema deines Artikels</strong> passen — nicht jeder schreibt über dasselbe Thema. Die Beschreibungen werden über <code>content/meta.json</code> gesteuert:</p>
+
+<pre>{
+  "relevance_topic": "KI im Geometrieunterricht",
+  "relevance_3": "Direkt: KI + Geometrie + Bildung",
+  "relevance_2": "KI + Mathematik oder Geometrie + Didaktik",
+  "relevance_1": "Allgemein KI-Bildung, Rahmendokumente"
+}</pre>
+
+<p>Diese Texte erscheinen im Quellenverzeichnis bei der Bewertungsmethodik. Claude verwendet sie außerdem als Leitfaden, um neue Quellen korrekt einzuordnen.</p>
+
+<p><strong>Beispiel für ein anderes Thema:</strong></p>
+<pre>{
+  "relevance_topic": "Nachhaltigkeit in der Architekturausbildung",
+  "relevance_3": "Direkt: Nachhaltige Architektur + Hochschuldidaktik",
+  "relevance_2": "Architekturausbildung oder Nachhaltigkeitsdidaktik allgemein",
+  "relevance_1": "Allgemeine Hochschuldidaktik, Rahmendokumente"
+}</pre>
+
+<p>Wenn du die Felder nicht befüllst, verwendet <code>build.py</code> generische Fallback-Texte.</p>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="abbildungen">10. Abbildungen einbinden</h2>
 
 <p>Abbildungen werden im Ordner <code>figures/</code> abgelegt und im Kapitel-Markdown referenziert:</p>
 
@@ -241,16 +315,15 @@
 Empfehlung für maximale Kompatibilität: <strong>PNG</strong> verwenden.</p>
 
 <!-- ══════════════════════════════════════════════════════════ -->
-<h2 id="build">9. Build-System</h2>
+<h2 id="build">11. Build-System</h2>
 
 <p>Der gesamte Artikel wird durch ein einziges Python-Script erzeugt:</p>
 
-<pre>cd 00_research_alpha
-python3 build.py</pre>
+<pre>python3 build.py</pre>
 
 <p>Das Script liest:</p>
 <ul>
-  <li><code>content/meta.json</code> — Titel, Autoren, Abstract, Kapitelliste</li>
+  <li><code>content/meta.json</code> — Titel, Autoren, Abstract, Kapitelliste, Relevanz-Kategorien</li>
   <li><code>content/01_einleitung.md</code> bis <code>10_ausblick.md</code> — Kapitelinhalte (Markdown)</li>
   <li><code>sources/sources.json</code> — alle Quellen mit Metadaten</li>
   <li><code>assets/css/paper.css</code> — Stylesheet</li>
@@ -258,22 +331,24 @@ python3 build.py</pre>
 
 <p>Es erzeugt:</p>
 <ul>
-  <li><code>standalone.html</code> — vollständiger Artikel mit Overlay, Zitationsystem, LaTeX-Export-Overlay</li>
-  <li><code>standalone.tex</code> — LaTeX-Datei (Farbe, 11 pt, Standardparameter)</li>
+  <li><code>standalone.html</code> — vollständiger Artikel mit Zitationssystem und LaTeX-Export-Overlay</li>
+  <li><code>standalone.tex</code> — LaTeX-Datei (Farbe)</li>
   <li><code>standalone_sw.tex</code> — LaTeX-Datei (Schwarz-Weiß)</li>
-  <li><code>quellen.html</code> wird aktualisiert (Quelldaten + Zitations-Backlinks eingebettet)</li>
+  <li><code>quellen.html</code> wird aktualisiert (Quelldaten, Zitations-Backlinks und Relevanz-Texte eingebettet)</li>
 </ul>
 
 <p><strong>Zitationserkennung:</strong> Das Script erkennt automatisch alle APA-Zitate im Format <em>(Nachname, Jahr)</em> im Text, ordnet sie den Quellen in <code>sources.json</code> zu und erzeugt anklickbare Spans mit Quellenkarten-Overlay.</p>
 
+<p><strong>Wichtig:</strong> Nur das Format <code>(Nachname, Jahr)</code> wird erkannt — <strong>nicht</strong> <code>[S001]</code> oder andere Formate. Der Nachname muss exakt mit dem ersten Eintrag in <code>authors</code> in <code>sources.json</code> übereinstimmen.</p>
+
 <!-- ══════════════════════════════════════════════════════════ -->
-<h2 id="quellen-hinzufuegen">10. Neue Quellen hinzufügen</h2>
+<h2 id="quellen-hinzufuegen">12. Neue Quellen hinzufügen</h2>
 
 <p>Neue Quellen werden in <code>sources/sources.json</code> eingetragen. Die nächste freie ID steht im <code>CLAUDE.md</code>-File des Projekts.</p>
 
 <p>Schema einer Quelle:</p>
 <pre>{
-  "id": "S282",
+  "id": "S001",
   "title": "Titel des Werks",
   "authors": ["Nachname, V.", "Nachname2, V2."],
   "year": 2025,
@@ -284,21 +359,58 @@ python3 build.py</pre>
   "recency": 3,
   "relevance": 3,
   "score": 10,
-  "badges": ["peer", "openaccess", "math"],
+  "badges": ["peer", "openaccess"],
   "abstract": "Kurzzusammenfassung auf Deutsch.",
   "doi": "10.xxxx/xxxxx",
   "url": "https://...",
   "local": null,
-  "retrieved": "2026-03-21",
+  "retrieved": "2026-03-23",
   "notes": ""
 }</pre>
 
 <p>Nach dem Eintrag: Im jeweiligen Kapitel-Markdown zitieren (<em>Nachname &amp; Nachname, Jahr</em>) und im Literaturabschnitt am Kapitelende eine APA-7-Referenz ergänzen. Dann <code>python3 build.py</code> ausführen.</p>
 
-<p>Zuletzt <code>content/meta.json</code> und die Quellenanzahl in <code>content/01_einleitung.md</code> aktualisieren.</p>
+<p>Zuletzt <code>content/meta.json</code> → <code>source_count</code> aktualisieren.</p>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<h2 id="praesentation">13. Präsentation</h2>
+
+<p>Die Präsentation (<a href="presentation/index.html">presentation/index.html</a>) basiert auf <strong>Reveal.js 5.1.0</strong> und bietet:</p>
+
+<div class="function-card">
+  <h4>⚙ Werkzeugbox (FAB-Cluster)</h4>
+  <p>Klick auf ⚙ öffnet die Werkzeugbox:<br>
+  <strong>✦</strong> Alle Folienbilder generieren · <strong>◎</strong> Aktuelle Folie neu generieren ·
+  <strong>⊞</strong> Layout wählen · <strong>Aa</strong> Schriftstil ·
+  <strong>◉</strong> Hintergrundfarbe · <strong>⊡</strong> Einstellungen exportieren ·
+  <strong>◈</strong> Bildstil-Galerie · <strong>⬇</strong> Deployment-ZIP herunterladen</p>
+</div>
+
+<div class="function-card">
+  <h4>3 Layout-Varianten</h4>
+  <p><strong>Rein:</strong> Kein Bild, klarer Hintergrund<br>
+  <strong>Gradient:</strong> Verlauf von links (weiß) nach rechts (volles Bild) — per Canvas API ins Bild eingebacken<br>
+  <strong>BG:</strong> Bild blass im gesamten Hintergrund (18 % Opacity)</p>
+</div>
+
+<div class="function-card">
+  <h4>8 Schriftstil-Themes</h4>
+  <p>System · Fraunces + Inter · Space Grotesk · Syne · Bricolage Grotesque · Barlow Condensed · Caveat Brush · Satisfy</p>
+</div>
+
+<div class="function-card">
+  <h4>Bildstil-Galerie (stile.html)</h4>
+  <p>18 vordefinierte Stile (Blueprint, Aquarell, Holzschnitt, Pop Art, Sticker etc.). Stil-Wechsel in <code>stile.html</code> löst automatisch eine Neugenerierung aller Folienbilder aus — kein manuelles ✦ nötig.</p>
+</div>
+
+<div class="function-card">
+  <h4>⬇ Deployment-ZIP</h4>
+  <p>Erstellt ein selbständiges ZIP-Paket mit allen Seiten und eingebetteten Bildern (als Data-URLs). Das ZIP kann direkt per SFTP/FTP auf einen Webserver hochgeladen werden — kein fal.ai-Key online nötig.</p>
+</div>
 
 <footer style="margin-top:3rem;padding-top:1rem;border-top:1px solid #eee;font-size:.78rem;color:#aaa;font-family:sans-serif">
-  Handbuch zum Projekt „KI im Geometrieunterricht" · Thomas Schroffenegger · 2026 ·
+  Handbuch zum Forschungsartikel-Template ·
+  <a href="https://github.com/harubert/claude-research" style="color:#aaa" target="_blank" rel="noopener">GitHub</a> ·
   <a href="index.html" style="color:#aaa">Startseite</a>
 </footer>
 
