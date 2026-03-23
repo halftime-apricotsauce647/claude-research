@@ -567,7 +567,7 @@ def _anhang7_section():
         '<section id="anhang-7" style="margin-top:3rem;border-top:2px solid #ddd;padding-top:2rem">\n'
         '<h2>Anhang 7: Vollständiges Quellenverzeichnis</h2>\n'
         f'<p style="font-size:.84rem;color:#555;margin-bottom:1.2rem">'
-        f'{len(real_sources)} Quellen mit Qualitätslabels (Stand März 2026)</p>\n'
+        f'{len(real_sources)} Quellen mit Qualitätslabels</p>\n'
         + "\n".join(items)
         + '\n</section>'
     )
