@@ -417,6 +417,29 @@ Prüfe mit grep ob `[S` im Text vorkommt und ersetze jeden Fund durch die korrek
 - Lokal-Bezug stärken wo möglich (nationale Institutionen, Hochschulen, Bildungsministerium)
 - Konkrete Beispiele und Zahlen bevorzugen — keine vagen Aussagen
 
+### Sprachqualität — KEIN generischer KI-Stil
+
+Der Text muss sich lesen als hätte ein Mensch ihn geschrieben. Pflichtregeln:
+
+- **Satzanfänge variieren**: Nie zwei aufeinanderfolgende Sätze gleich beginnen. Perspektive wechseln, mit Nebensatz beginnen, Adverb voranstellen, Frage stellen.
+- **Keine Floskeln**: „Es ist wichtig zu beachten", „In diesem Zusammenhang", „Darüber hinaus", „Zusammenfassend lässt sich sagen" — streichen. Direkt formulieren.
+- **Nominalstil vermeiden**: „Die Durchführung der Untersuchung" → „Wir untersuchten". Verben statt Substantivierungen.
+- **Satzlänge variieren**: Kurze und lange Sätze mischen. Nach einem komplexen Satz ein kurzer. Das erzeugt Rhythmus.
+- **Konkret statt abstrakt**: Zahlen, Beispiele, Namen. Nicht „eine Studie zeigte positive Ergebnisse", sondern „Gurmu et al. (2024) fanden bei 87 Schüler\*innen signifikant bessere Leistungen (d = 0,73)".
+- **Wiederholungen vermeiden**: Dasselbe Wort maximal zweimal pro Absatz. Synonyme und Umschreibungen.
+- **Übergänge variieren**: Nicht immer „Außerdem", „Zudem". Inhaltliche Brücken, Kontraste, Fragen.
+- **Eigene Stimme**: Wissenschaftlich aber lebendig. Nicht steril. Der Text darf Haltung zeigen.
+
+### Handschrift-Features — Individuelle Textqualität
+
+- **Perspektiv-Filter**: Aus einem klaren Blickwinkel schreiben. Nicht „man könnte sagen" — sondern eine erkennbare Position einnehmen. Wer spricht hier?
+- **Fokus-Gewichtung**: Nicht alles gleich wichtig. Kernkapitel ausführlicher, Randthemen knapper. Klare Linie.
+- **Denkbewegung**: Gedankengang sichtbar machen. Nicht nur Ergebnisse auflisten, sondern zeigen WIE man zur Schlussfolgerung kommt. „Zunächst scheint es, als ob… — doch bei genauerem Hinsehen…"
+- **Kontrast**: Spannung erzeugen. Pro und Contra. Erwartung und Überraschung. Nicht alles glatt und harmonisch.
+- **Fragen einbauen**: Rhetorische Fragen beleben den Text. „Was bedeutet das für die Praxis?" — maximal 1–2 pro Kapitel, gezielt.
+- **Reduktion**: Weniger ist mehr. Absätze die nichts Neues sagen → streichen. Kürze ist Qualität.
+- **Praxisbezug**: Theorie immer mit konkretem Beispiel verbinden. Abstrakte Befunde an eine Unterrichtssituation knüpfen.
+
 ---
 
 ## Build-Befehl
